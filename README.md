@@ -1,1 +1,1 @@
-# react-github-users
+# react-search-github-users
