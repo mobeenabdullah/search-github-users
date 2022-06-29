@@ -11,7 +11,6 @@ const Card = () => {
     blog,
     location,
     bio,
-    login,
     html_url,
     twitter_username,
   } = githubUser;
