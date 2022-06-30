@@ -16,31 +16,29 @@ const Card = () => {
   } = githubUser;
 
   return (
-    <section className="section">
-      <Wrapper className="section-center">
-        <header>
-          <img src={avatar_url} alt={name} />
-          <div>
-            <h4>{name}</h4>
-            <p>@{twitter_username || "john doe"}</p>
-          </div>
-          <a href={html_url}>follow</a>
-        </header>
-        <p className="bio">{bio}</p>
-        <div className="links">
-          <p>
-            <MdBusiness></MdBusiness> {company}
-          </p>
-          <p>
-            <MdLocationOn></MdLocationOn> {location || "earth"}
-          </p>
-          <a href={`https://${blog}`}>
-            <MdLink></MdLink>
-            {blog}
-          </a>
+    <Wrapper>
+      <header>
+        <img src={avatar_url} alt={name} />
+        <div>
+          <h4>{name}</h4>
+          <p>@{twitter_username || "john doe"}</p>
         </div>
-      </Wrapper>
-    </section>
+        <a href={html_url}>follow</a>
+      </header>
+      <p className="bio">{bio}</p>
+      <div className="links">
+        <p>
+          <MdBusiness></MdBusiness> {company}
+        </p>
+        <p>
+          <MdLocationOn></MdLocationOn> {location || "earth"}
+        </p>
+        <a href={`https://${blog}`}>
+          <MdLink></MdLink>
+          {blog}
+        </a>
+      </div>
+    </Wrapper>
   );
 };
 const Wrapper = styled.article`
