@@ -11,7 +11,7 @@ ReactDOM.render(
     <Auth0Provider
       domain="dev-m-57qtwv.us.auth0.com"
       clientId="Sh4iT1MaG3jbJx4D9T6iiMYsKlTRcJAX"
-      redirectUri={window.location.origin}
+      redirectUri="https://react-search-github-users-by-mobeen.netlify.app/"
       cacheLocation="localstorage"
     >
       <GithubProvider>
