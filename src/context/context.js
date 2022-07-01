@@ -24,7 +24,21 @@ const GithubProvider = ({ children }) => {
       .catch((err) => console.log(err));
     if (response) {
       setGithubUser(response.data);
-      // more logic here
+      const { login, followers_url } = response.data;
+
+      // repos
+      axios(`${rootUrl}/users/${login}/repos?per_page=100`)
+        .then((response) => {
+          setRepos(response.data);
+        })
+        .catch((err) => console.log(err));
+
+      // followers
+      axios(`${followers_url}?per_page=100`)
+        .then((response) => {
+          setFollowers(response.data);
+        })
+        .catch((err) => console.log(err));
     } else {
       toggleError(true, "there is no user with that username");
     }
